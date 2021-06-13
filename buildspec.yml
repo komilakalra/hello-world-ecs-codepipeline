@@ -13,8 +13,7 @@ phases:
   build:
     commands:
     - echo Build started on `date`
-    - eccd D:\git\hello-world-rest-api-code-pipeline-aws-ecscd
-     ho $IMAGE_URI
+    - echo  $IMAGE_URI
     - mvn clean package -Ddockerfile.skip
     - docker build --tag $IMAGE_URI .
   post_build:
@@ -29,3 +28,4 @@ phases:
 artifacts:
   files:
   - imagedefinitions.json
+  
